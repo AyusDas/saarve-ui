@@ -18,7 +18,7 @@ const SignUp = () => {
                     <span className="px-2 text-blue-700 font-semibold hover:underline"><Link to="/landing">Sign In !</Link></span>
                 </p>
                 <div className="mt-16 w-full">
-                    <form>
+                    <form onSubmit={SignUpUser}>
                         <div className={formDivClassName}>
                             <p>Username</p>
                             <input className={inputClassName} type="text" name="username"/>
