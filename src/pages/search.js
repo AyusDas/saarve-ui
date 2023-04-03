@@ -13,7 +13,7 @@ const Search = () => {
                     Search
                 </div>
             </header>
-            <div className='flex flex-1 justify-between items-center bg-[#E6EFF9]'>
+            <div className='flex flex-1 justify-between items-center bg-[#E6EFF9] mt-2'>
                 <div className='px-5 py-5'>
                     <div className='text-xl'>Search Your</div>
                     <div className='text-2xl font-semibold'>Specialist</div>
@@ -35,8 +35,12 @@ const Search = () => {
                     </div>
                 </form>
             </div>
+            <div className='w-full h-72 bg-[#E6EFF9] flex flex-1 items-end'>
+                <img className='w-full' src={require('../assets/bg2.png')}/>
+            </div>
         </div>
     )
 }
 
 export default Search;
+
