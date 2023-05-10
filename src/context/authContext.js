@@ -11,17 +11,20 @@ export const AuthProvider = ({ children }) => {
 
     let SignUpUser = async(e) => {
         e.preventDefault()
-        
-        let response = await fetch('http://ec2-15-206-70-160.ap-south-1.compute.amazonaws.com:8000/api/core/profile/', {
-            method:'POST',
+        let myRequestMethod = 'POST'
+        if(localStorage.getItem('hasRegistered')) {
+            myRequestMethod = 'PUT'
+        }
+        let response = await fetch('http://13.232.76.12:8000/api/app/profile/', {
+            method: myRequestMethod,
             headers:{
                 'Content-Type':'application/json',
-                'Authorization' : 'Token token_value'
+                'Authorization' : 'Token '+idToken
             },
             body:JSON.stringify({
                 'full_name':e.target.full_name.value,
                 'email':e.target.email.value,
-                'profile_pic':e.target.profile_pic.value,
+                //'profile_pic':e.target.profile_pic.value,
                 'address':e.target.address.value,
                 'city':e.target.city.value,
                 'pincode':e.target.pincode.value,
@@ -48,6 +51,7 @@ export const AuthProvider = ({ children }) => {
 
     let contextData = {
         SignUpUser:SignUpUser,
+        id_token : idToken,
         logoutUser:logoutUser
     }
 
