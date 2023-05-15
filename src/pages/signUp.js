@@ -22,7 +22,6 @@ const SignUp = () => {
         .then((response) => response.json())
         .then((data) => {
             setProfileData(data)
-            localStorage.setItem('hasRegistered' , 'yes')
         })
     },[])
 
