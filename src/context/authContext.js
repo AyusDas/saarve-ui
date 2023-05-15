@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     let SignUpUser = async(e) => {
         e.preventDefault()
         let myRequestMethod = 'POST'
-        if(localStorage.getItem('hasRegistered')) {
+        if(idToken) {
             myRequestMethod = 'PUT'
         }
         let response = await fetch('http://13.232.76.12:8000/api/app/profile/', {
@@ -61,3 +61,4 @@ export const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     )
 }
+
