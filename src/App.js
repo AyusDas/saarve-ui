@@ -9,20 +9,23 @@ import DoctorPage from './pages/DoctorPage';
 import NotifyPage from './pages/NotifyPage';
 import MenuPage from './pages/MenuPage';
 import Search from './pages/search';
+import DoctorBooking from './pages/DoctorBooking';
 
 const App = () => {
     return (
         <Router>
             <AuthProvider>
                 <Routes> 
-                    <Route exact path="/" element={<PrivateRoute/>}></Route>
-                    <Route exact path="/home" Component={HomePage}/>
-                    <Route exact path="/search" Component={Search}/>
-                    <Route exact path="/doctors" Component={DoctorPage}/>
-                    <Route exact path="/notifications" Component={NotifyPage}/>
-                    <Route exact path="/Menu" Component={MenuPage}/>
+                    <Route element={<PrivateRoute/>}>
+                        <Route exact path="/home" Component={HomePage}/>
+                        <Route exact path="/search" Component={Search}/>
+                        <Route exact path="/doctors" Component={DoctorPage}/>
+                        <Route exact path="/doctorbooking" Component={DoctorBooking}/>
+                        <Route exact path="/notifications" Component={NotifyPage}/>
+                        <Route exact path="/Menu" Component={MenuPage}/>
+                        <Route path="/" Component={SignUp} />
+                    </Route>
                     <Route exact path="/landing" Component={Landing} />
-                    <Route path="/signup" Component={SignUp} />
                 </Routes>
             </AuthProvider>
         </Router>
