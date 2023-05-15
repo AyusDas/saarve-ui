@@ -8,9 +8,10 @@ import { BiLogOut, BiTransferAlt, BiHelpCircle } from "react-icons/bi";
 import { RiHistoryLine } from "react-icons/ri";
 import 'react-multi-carousel/lib/styles.css';
 import boySvg from '../assets/boy-svgrepo-com.svg';
+import './HomePage.css';
 
 const MenuPage = () => {
-    const liClass = "py-5 px-5 text-xl flex flex-1 gap-3 items-center text-blue-600 font-semibold"
+    const liClass = "py-5 px-5 text-xl flex flex-1 gap-3 items-center text-blue-600 font-semibold nice-font"
     return (
         <div>
             <Header/>
@@ -18,9 +19,9 @@ const MenuPage = () => {
                 <ul>
                     <li className='flex gap-3 py-3 px-3 items-center'>
                         <img src={boySvg} className='w-16 h-16 rounded-full' />
-                        <div className='px-3 font-semibold text-xl'>
+                        <div className='px-3 font-semibold text-xl nice-font'>
                             Harish Kumar<br/>
-                            <Link className='text-blue-600 font-semibold'>
+                            <Link className='text-blue-600 font-semibold nice-font'to='/'>
                                 View Profile
                             </Link>
                         </div>
