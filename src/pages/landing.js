@@ -20,7 +20,7 @@ const Landing = () => {
     }
 
     if(getCookie('csrftoken') == null){
-        fetch('http://ec2-15-206-70-160.ap-south-1.compute.amazonaws.com:8000/api/core/cookie/csrf/')
+        fetch('http://13.232.76.12:8000/api/core/cookie/csrf/')
             .then((response) => response.json())
             .then(data => {
                 createCookie("csrftoken", data.csrf_token, 1)
@@ -45,7 +45,7 @@ const Landing = () => {
 
     async function onSignIn(g_response) {
         const csrfToken = getCookie('csrftoken');
-        let response = await fetch('http://ec2-15-206-70-160.ap-south-1.compute.amazonaws.com:8000/api/core/auth/google/', {
+        let response = await fetch('http://13.232.76.12:8000/api/core/auth/google/', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -59,8 +59,8 @@ const Landing = () => {
         console.log("data : ", data)
         
         if( response.status === 200 ) {
-            localStorage.setItem('idToken', JSON.stringify(data))
-            navigate("/signup")
+            localStorage.setItem('idToken', data.token)
+            navigate("/")
         }
     }
 
@@ -96,4 +96,3 @@ const Landing = () => {
 }
 
 export default Landing;
-
