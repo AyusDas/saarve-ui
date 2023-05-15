@@ -1,16 +1,17 @@
 import React from 'react'
 import Header from '../components/Header';
 import { FaStar } from 'react-icons/fa';
-import Footer from '../components/Footer';
+import './HomePage.css';
 import { Link } from "react-router-dom";
 
 const DoctorPage = () => {
     return (
         <div>
             <Header/>
-            <div className='bg-[#E6EFF9] h-screen'>
+            <div className='bg-[#E6EFF9] h-full'>
+
                 <section className='flex flex-1 items-center w-full py-5'>
-                    <div className='text-2xl font-semibold w-full ml-3'>
+                    <div className='text-2xl font-semibold w-full ml-3 nice-font'>
                         Available Doctors
                     </div>
                 </section>
@@ -63,7 +64,9 @@ const DoctorPage = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <div className='w-full h-72 bg-[#E6EFF9] flex flex-1 items-end'>
+                <img className='w-full' src={require('../assets/bg2.png')}/>
+            </div>
         </div>
     )
 }
